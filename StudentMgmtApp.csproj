@@ -143,27 +143,28 @@
     <Compile Include="Models\Course.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CourseFormViewModel.cs" />
-    <Compile Include="Models\CourseViewModel.cs" />
+    <Compile Include="Models\Course\CourseFormViewModel.cs" />
+    <Compile Include="Models\Course\CourseViewModel.cs" />
+    <Compile Include="Models\Dashboard\DashboardViewModel.cs" />
     <Compile Include="Models\Department.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DepartmentFormViewModel.cs" />
-    <Compile Include="Models\DepartmentViewModel.cs" />
+    <Compile Include="Models\Department\DepartmentFormViewModel.cs" />
+    <Compile Include="Models\Department\DepartmentViewModel.cs" />
     <Compile Include="Models\Enrollment.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EnrollmentFormViewModel.cs" />
-    <Compile Include="Models\EnrollmentViewModel.cs" />
+    <Compile Include="Models\Enrollment\EnrollmentFormViewModel.cs" />
+    <Compile Include="Models\Enrollment\EnrollmentViewModel.cs" />
     <Compile Include="Models\Semester.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SemesterFormViewModel.cs" />
-    <Compile Include="Models\SemesterViewModel.cs" />
+    <Compile Include="Models\Semester\SemesterFormViewModel.cs" />
+    <Compile Include="Models\Semester\SemesterViewModel.cs" />
     <Compile Include="Models\Student.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\StudentFormViewModel.cs" />
+    <Compile Include="Models\Student\StudentFormViewModel.cs" />
     <Compile Include="Models\StudentModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,10 +180,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\StudentViewModel.cs" />
+    <Compile Include="Models\Student\StudentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\cardcover.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -250,7 +252,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Departments\Index.cshtml" />
     <Content Include="Views\Departments\Create.cshtml" />
     <Content Include="Views\Semesters\Index.cshtml" />
@@ -272,6 +273,10 @@
     <Content Include="Views\Semesters\Details.cshtml" />
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Departments\Delete.cshtml" />
+    <Content Include="Views\Semesters\Delete.cshtml" />
+    <Content Include="Views\Students\Delete.cshtml" />
+    <Content Include="Views\Courses\Delete.cshtml" />
+    <Content Include="Views\Enrollments\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

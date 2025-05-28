@@ -2,8 +2,33 @@
     ViewBag.Title = "About";
 }
 <main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
+    <h4>Tech Stack</h4>
+    <ul>
+        <li>ASP.NET MVC (.NET Framework 4.8)</li>
+        <li>Entity Framework Database First</li>
+        <li>SQL Server</li>
+        <li>Bootstrap 5</li>
+        <li>Chart.js</li>
+        <li>Razor Views</li>
+    </ul>
 
-    <p>Use this area to provide additional information.</p>
+    <h4>Database Tables & Relationships</h4>
+    <ul>
+        <li><strong>Departments</strong> (1 -&gt; M) Students, Courses</li>
+        <li><strong>Semesters</strong> (1 -&gt; M) Enrollments</li>
+        <li><strong>Students</strong> (M -&gt; 1) Departments; (1 -&gt; M) Enrollments</li>
+        <li><strong>Courses</strong> (M -&gt; 1) Departments; (1 -&gt; M) Enrollments</li>
+        <li><strong>Enrollments</strong> (M -&gt; 1) Students, Courses, Semesters</li>
+    </ul>
+
+    <h4>Purpose & Working</h4>
+    <p>
+        Perform CRUD operations on each entity.
+        View statistics via a dashboard that visualizes:
+    </p>
+    <ul>
+        <li>Number of students per department (bar chart)</li>
+        <li>Number of enrollments per course (pie chart)</li>
+    </ul>
+    <p>The MVC pattern separates concerns between Models, Views, and Controllers for maintainable code.</p>
 </main>

@@ -12,7 +12,7 @@
         <dd>@Model.Name</dd>
     </dl>
 </div>
-@using (Html.BeginForm("DeleteConfirmed", "Departments", new { id = Model.DepartmentId }, FormMethod.Post))
+@using (Html.BeginForm("Delete", "Departments", new { id = Model.DepartmentId }, FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-danger">Delete</button>
