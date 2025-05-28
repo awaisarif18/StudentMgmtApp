@@ -1,0 +1,26 @@
+﻿@model StudentMgmtApp.Models.EnrollmentFormViewModel
+@{
+    ViewBag.Title = "Create Enrollment";
+}
+<h2>Create Enrollment</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(m => m.StudentId, "Student")
+        @Html.DropDownListFor(m => m.StudentId, Model.Students, "--Select Student--", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CourseId, "Course")
+        @Html.DropDownListFor(m => m.CourseId, Model.Courses, "--Select Course--", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SemesterId, "Semester")
+        @Html.DropDownListFor(m => m.SemesterId, Model.Semesters, "--Select Semester--", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Grade)
+        @Html.TextBoxFor(m => m.Grade, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+}

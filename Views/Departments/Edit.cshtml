@@ -1,0 +1,16 @@
+﻿@model StudentMgmtApp.Models.DepartmentFormViewModel
+@{
+    ViewBag.Title = "Edit Department";
+}
+<h2>Edit Department</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.DepartmentId)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+}

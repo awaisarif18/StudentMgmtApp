@@ -1,0 +1,15 @@
+﻿@model StudentMgmtApp.Models.DepartmentFormViewModel
+@{
+    ViewBag.Title = "Create Department";
+}
+<h2>Create Department</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+}

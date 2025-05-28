@@ -1,0 +1,31 @@
+﻿@model IEnumerable<StudentMgmtApp.Models.DepartmentViewModel>
+@{
+    ViewBag.Title = "Departments";
+}
+<h2>Departments</h2>
+<p>
+    @Html.ActionLink("Create New Department", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.First().DepartmentId)</th>
+            <th>@Html.DisplayNameFor(m => m.First().Name)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DepartmentId</td>
+                <td>@item.Name</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.DepartmentId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.DepartmentId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.DepartmentId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

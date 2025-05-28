@@ -1,0 +1,35 @@
+﻿@model IEnumerable<StudentMgmtApp.Models.CourseViewModel>
+@{
+    ViewBag.Title = "Courses";
+}
+<h2>Courses</h2>
+<p>
+    @Html.ActionLink("Create New Course", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.First().CourseId)</th>
+            <th>@Html.DisplayNameFor(m => m.First().Title)</th>
+            <th>@Html.DisplayNameFor(m => m.First().Credits)</th>
+            <th>@Html.DisplayName("Department")</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CourseId</td>
+                <td>@item.Title</td>
+                <td>@item.Credits</td>
+                <td>@item.DepartmentName</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CourseId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

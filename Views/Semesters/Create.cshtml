@@ -1,0 +1,22 @@
+﻿@model StudentMgmtApp.Models.SemesterFormViewModel
+@{
+    ViewBag.Title = "Create Semester";
+}
+<h2>Create Semester</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StartDate)
+        @Html.TextBoxFor(m => m.StartDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.EndDate)
+        @Html.TextBoxFor(m => m.EndDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+}

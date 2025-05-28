@@ -1,0 +1,17 @@
+﻿@model StudentMgmtApp.Models.DepartmentViewModel
+@{
+    ViewBag.Title = "Department Details";
+}
+<h2>Department Details</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(m => m.DepartmentId)</dt>
+        <dd>@Model.DepartmentId</dd>
+        <dt>@Html.DisplayNameFor(m => m.Name)</dt>
+        <dd>@Model.Name</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DepartmentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

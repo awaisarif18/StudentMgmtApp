@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    var data = ViewBag.EnrollData as List<dynamic>;
+}
+<h2>Enrollment Counts per Course</h2>
+<canvas id="enrollChart"></canvas>
+
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    var ctx = document.getElementById('enrollChart').getContext('2d');
+    var labels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(data.Select(d=>d.Course)));
+    var counts = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(data.Select(d=>d.Count)));
+    new Chart(ctx, {
+        type: 'bar',
+        data: { labels: labels, datasets: [{ label: 'Enrollments', data: counts }] }
+    });
+    </script>
+}
